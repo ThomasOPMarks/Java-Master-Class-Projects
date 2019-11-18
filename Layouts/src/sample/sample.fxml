@@ -1,18 +1,25 @@
 <!--The hgap is the space between gaps-->
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" gridLinesVisible="true">
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10" gridLinesVisible="true">
 <!--    Defaults are 0 and 0, so by default things would overlap-->
 <!--    Note that the largest button sets the width-->
-    <columnConstraints>
-        <!--        This is how much each column is forced to use-->
-        <ColumnConstraints percentWidth="50.0"/>
-        <ColumnConstraints percentWidth="50.0"/>
-    </columnConstraints>
-    <Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <padding>
+        <!--        This adds a padding to the top of the element-->
+        <Insets top="10"/>
+    </padding>
+    <!--    <columnConstraints>-->
+    <!--        This is how much each column is forced to use, counting up from 0-->
+    <!--        <ColumnConstraints percentWidth="50.0"/>-->
+    <!--        <ColumnConstraints percentWidth="50.0"/>-->
+    <!--    </columnConstraints>-->
+    <Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.halignment="RIGHT"/>
     <Button text="Button Two"  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
     <Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <Button text="Button Really Long Label Button 4" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-    <Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <!--    Column span lets the element take up multiple cols-->
+    <Button text="Button Really Long Label For Button 4" GridPane.rowIndex="1" GridPane.columnIndex="1"
+            GridPane.columnSpan="2"/>
+    <Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
 </GridPane>
